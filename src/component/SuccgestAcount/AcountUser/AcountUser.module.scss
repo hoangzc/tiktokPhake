@@ -1,0 +1,74 @@
+.wrapper {
+    // padding: 20px;
+    width: 320px;
+    // width: 100%;
+    background: rgb(255, 255, 255);
+    box-shadow: rgb(0 0 0 / 12%) 0px 2px 12px;
+    border-radius: 8px;
+    max-height: min(100vh - 96px - 60px, 734px);
+    min-height: 200px;
+    padding-top: 8px;
+    flex-direction: column;
+    display: flex;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.avatars {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 20px;
+}
+.btn-follow {
+    padding: 6px 10px;
+    text-align: center;
+    justify-content: center;
+    margin-right: 30px;
+}
+.body {
+    margin-top: 12px;
+    color: #161823;
+    border-bottom: 1px solid rgb(162, 157, 157);
+    width: 90%;
+    margin-left: 16px;
+    margin-right: 5px;
+}
+.nickname {
+    font-size: 18px;
+    margin-left: 4px;
+}
+.check {
+    font-size: 1.5rem;
+    color: #20d5ec;
+    margin-left: 5px;
+    margin-bottom: 1px;
+}
+.names {
+    font-size: 1.4rem;
+    margin-left: 4px;
+}
+.analytics {
+    margin-top: 10px;
+    font-size: 1.6rem;
+}
+.value {
+    margin-left: 4px;
+}
+.value ~ .value {
+    margin-left: 35px;
+}
+.label {
+    color: #161823bf;
+}
+.analytics {
+    margin-bottom: 12px;
+}
+.introduce {
+    padding: 20px 20px;
+    margin-top: -10px;
+}

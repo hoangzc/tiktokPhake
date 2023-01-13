@@ -1,0 +1,29 @@
+.video-me {
+    text-align: center;
+    display: inline;
+}
+
+.video-dataMe {
+    margin-top: 10px;
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    margin-left: 11px;
+    object-fit: cover;
+}
+.video-succgest-user {
+    // width: 200px;
+    width: 100% !important;
+    object-fit: cover;
+    height: 280px !important;
+    border-radius: 6px;
+}
+video {
+    height: 280px;
+    border-radius: 10px;
+}
+.titile-video {
+    position: absolute;
+    font-size: 10px;
+    color: #fff;
+}

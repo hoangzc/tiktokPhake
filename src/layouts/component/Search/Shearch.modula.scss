@@ -1,0 +1,88 @@
+.shearch-btn {
+    width: 52px;
+    height: 100%;
+    border-top-right-radius: var(--shearch-border-radius);
+    border-bottom-right-radius: var(--shearch-border-radius);
+    font-size: 1.8rem;
+    color: rgba(22, 24, 35, 0.34);
+
+    &:hover {
+        background: rgba(22, 24, 35, 0.03);
+        cursor: pointer;
+    }
+
+    &:active {
+        background-color: rgba(22, 24, 35, 0.07);
+    }
+}
+.shearch-result {
+    width: 361px;
+    // background-color: rgba(22, 24, 35, 0.5);
+}
+
+.shearch-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: 5px 12px;
+}
+
+.shearch {
+    background-color: rgba(22, 24, 35, 0.06);
+    width: 361px;
+    height: var(--shearch-height);
+    border-radius: 92px;
+    padding-left: 16px;
+    display: flex;
+    position: relative;
+    border: 1.5px solid transparent;
+
+    input {
+        flex: 1;
+        color: #000;
+        font-size: 1.6rem;
+        background: transparent;
+        height: 100%;
+        caret-color: rgb(210, 74, 74);
+        padding-right: 40px;
+    }
+
+    input:not(:placeholder-shown) ~ .shearch-btn {
+        color: rgba(22, 24, 35, 0.75);
+        background-color: rgba(22, 24, 35, 0.04);
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        height: 28px;
+        background-color: rgba(22, 24, 35, 0.1);
+        width: 1px;
+        top: 9px;
+        right: 52px;
+    }
+
+    &:focus-within {
+        border-color: rgba(22, 24, 35, 0.3);
+    }
+}
+
+.clear,
+.loading {
+    position: absolute;
+    right: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(22, 24, 35, 0.3);
+}
+.loading {
+    animation: spiner 1s linear infinite;
+}
+
+@keyframes spiner {
+    from {
+        transform: translateY(-50%) rotate(0);
+    }
+    to {
+        transform: translateY(-50%) rotate(360deg);
+    }
+}

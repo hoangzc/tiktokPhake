@@ -1,0 +1,47 @@
+.menu-List {
+    width: 224px;
+
+    .menu-item {
+        display: block;
+        margin-left: 0;
+
+        &.separete {
+            border-top: 1px solid rgb(190, 183, 183);
+        }
+
+        &:hover {
+            background: rgba(22, 24, 35, 0.03);
+            width: 100%;
+            justify-content: flex-start;
+            display: -webkit-inline-box;
+            // padding: 11px 16px;
+        }
+    }
+}
+.menu-poper {
+    padding-bottom: 8px;
+}
+.menu-scroll {
+    overflow-y: auto;
+}
+
+// header
+
+.header {
+    position: relative;
+    height: 50px;
+    margin-top: -8px;
+    flex-shrink: 0;
+}
+.back-btn {
+    width: 50px;
+    height: 100%;
+    background: transparent;
+    cursor: pointer;
+}
+.header-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

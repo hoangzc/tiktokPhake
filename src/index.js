@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import GlobalStyles from './component/GlobalStyles';
+import { StoreVideoProfile } from './layouts/component/Video';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <GlobalStyles>
+        <App />
+    </GlobalStyles>,
 );
 
 // If you want to start measuring performance in your app, pass a function

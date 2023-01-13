@@ -1,0 +1,182 @@
+.wrapper {
+    --shearch-border-radius: 92px;
+
+    display: flex;
+    --shearch-height: 46px;
+    width: 100%;
+    height: var(--default-layout-header-style);
+    box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: white;
+    z-index: 10;
+}
+.inner {
+    height: 100%;
+    width: 1150px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 var(--default-layout-horizontal-layout);
+}
+
+.logo-link {
+    display: flex;
+}
+.shearch {
+    background-color: rgba(22, 24, 35, 0.06);
+    width: 361px;
+    height: var(--shearch-height);
+    border-radius: 92px;
+    padding-left: 16px;
+    display: flex;
+    position: relative;
+    border: 1.5px solid transparent;
+
+    input {
+        flex: 1;
+        color: #000;
+        font-size: 1.6rem;
+        background: transparent;
+        height: 100%;
+        caret-color: rgb(210, 74, 74);
+    }
+
+    input:not(:placeholder-shown) ~ .shearch-btn {
+        color: rgba(22, 24, 35, 0.75);
+        background-color: rgba(22, 24, 35, 0.04);
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        height: 28px;
+        background-color: rgba(22, 24, 35, 0.1);
+        width: 1px;
+        top: 9px;
+        right: 52px;
+    }
+
+    &:focus-within {
+        border-color: rgba(22, 24, 35, 0.3);
+    }
+}
+.actions {
+    display: flex;
+    align-items: center;
+}
+
+.action-btn {
+    background-color: transparent;
+    font-size: 2.2rem;
+    color: rgb(40, 35, 35);
+    padding: 4px 16px;
+    cursor: pointer;
+}
+
+.clear,
+.loading {
+    position: absolute;
+    right: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(22, 24, 35, 0.3);
+}
+.shearch-btn {
+    width: 52px;
+    height: 100%;
+    border-top-right-radius: var(--shearch-border-radius);
+    border-bottom-right-radius: var(--shearch-border-radius);
+    font-size: 1.8rem;
+    color: rgba(22, 24, 35, 0.34);
+
+    &:hover {
+        background: rgba(22, 24, 35, 0.03);
+        cursor: pointer;
+    }
+
+    &:active {
+        background-color: rgba(22, 24, 35, 0.07);
+    }
+}
+.shearch-result {
+    width: 361px;
+    // background-color: rgba(22, 24, 35, 0.5);
+}
+
+.shearch-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: 5px 12px;
+}
+
+.more-btn {
+    font-size: 2rem;
+    margin-left: 28px;
+    background-color: transparent;
+    padding: 8px;
+    cursor: pointer;
+}
+// menu
+.menu-items {
+    width: 224px;
+}
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.icon-messenger {
+    padding: 0 20px;
+    background: white;
+}
+.loggin-user {
+    margin-left: -150px;
+}
+
+.email {
+    width: 350px;
+    height: 350px;
+    // background-color: #ccc;
+    background-color: rgb(158, 173, 140);
+    margin-top: 150px;
+    z-index: 50;
+    text-align: center;
+    position: fixed;
+}
+.loogin-use {
+    position: absolute;
+    margin-top: 35px;
+    left: 30px;
+    font-weight: 600;
+}
+.email-user,
+.password-user {
+    width: 80%;
+    height: 35px;
+    border-radius: 3px;
+    margin-top: 80px;
+    padding: 0 15px;
+    font-size: 16px;
+}
+.btn-loggin {
+    padding: 8px 16px;
+    margin-top: 60px;
+    border-radius: 8px;
+    // background-color: rgb(229, 41, 41);
+    background-color: #ccc;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+
+    &:active {
+        background-color: red;
+    }
+}
+// .my-email {
+// }

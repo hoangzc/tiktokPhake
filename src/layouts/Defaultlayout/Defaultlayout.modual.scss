@@ -1,0 +1,33 @@
+.wrapperr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.wrapperrs {
+    display: flex;
+    margin-left: -200px;
+    position: absolute;
+}
+
+.container {
+    width: 1150px;
+    max-width: 100%;
+    display: flex;
+    padding: 0 var(--default-layout-horizontal-layout);
+    margin-top: 60px;
+}
+.containers {
+    width: 1150px;
+    max-width: 100%;
+    display: flex;
+    padding: 0 var(--default-layout-horizontal-layout);
+    margin-top: 60px;
+    margin-left: -200px;
+}
+.content {
+    flex: 1;
+    margin-left: 350px;
+}
+.SidebarLogger {
+    margin-left: -200px;
+}

@@ -1,0 +1,44 @@
+.video-usser-list {
+    width: 240px;
+    height: 270px;
+    object-fit: cover;
+    position: relative;
+    display: inline-block;
+    margin-left: 15px;
+    margin-top: 40px;
+}
+.video {
+    border-radius: 10px;
+    max-height: 300px;
+    width: 226px;
+    height: 300px;
+    position: absolute;
+    object-fit: cover;
+    margin-top: -20px;
+}
+.child-video {
+    position: absolute;
+    margin-top: 100px;
+    text-align: center;
+    width: 227px;
+    color: white;
+    font-size: 15px;
+    margin-top: 133px;
+}
+.img-cl {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.video-zc {
+    position: absolute;
+    object-fit: cover;
+}
+.page-following {
+    width: 1000px;
+}
+.name-user {
+    font-weight: 500;
+    font-size: 25px;
+}
