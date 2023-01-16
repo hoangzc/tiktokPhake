@@ -22,7 +22,6 @@ function Video() {
     const [theme, setTheme] = useState(initialState);
     const { ref, inView, entry } = useInView({ threshold: 0 });
     const [likevideo, setLikevideo] = useState(false);
-    console.log(conInviewLast);
 
     useEffect(() => {
         console.log('11111');
@@ -59,48 +58,54 @@ function Video() {
             setVideos(videos + 1);
             setInterval(() => {
                 setConInviewLast(false);
-            }, 2000);
+            }, 3000);
         } else {
             setConInviewLast(false);
         }
     }, [inView]);
+    useEffect(() => {
+        if (theme === true) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'overlay';
+        }
+    });
     return (
-        <>
+        <div style={{ display: 'block' }}>
             <div>
                 <div className={cx('body')}>
-                    {theme == true ? (
-                        <div className={cx('wrapperrs')}>
-                            <>{(document.body.style.overflow = 'hidden')}</>
-                            <themeContext.Provider value={[theme, setTheme]}>
-                                <creatLikeContext.Provider value={[likevideo, setLikevideo]}>
-                                    <RenderVideo view={inView} data={videoList} />
-                                </creatLikeContext.Provider>
-                            </themeContext.Provider>
-                        </div>
-                    ) : (
-                        <div className={cx('wrapperr')}>
-                            <>{(document.body.style.overflow = 'overlay')}</>
-                            <themeContext.Provider value={[theme, setTheme]}>
-                                <creatLikeContext.Provider value={[likevideo, setLikevideo]}>
-                                    <RenderVideo view={inView} data={videoList} />
-                                </creatLikeContext.Provider>
-                            </themeContext.Provider>
-                        </div>
-                    )}
+                    <>
+                        {theme == true ? (
+                            <div className={cx('wrapperrs')}>
+                                <themeContext.Provider value={[theme, setTheme]}>
+                                    <creatLikeContext.Provider value={[likevideo, setLikevideo]}>
+                                        <RenderVideo view={inView} data={videoList} />
+                                    </creatLikeContext.Provider>
+                                </themeContext.Provider>
+                            </div>
+                        ) : (
+                            <div className={cx('wrapperr')}>
+                                <themeContext.Provider value={[theme, setTheme]}>
+                                    <creatLikeContext.Provider value={[likevideo, setLikevideo]}>
+                                        <RenderVideo view={inView} data={videoList} />
+                                    </creatLikeContext.Provider>
+                                </themeContext.Provider>
+                            </div>
+                        )}
+                    </>
                 </div>
             </div>
             <div className={cx('the-last-video')}>
                 <div ref={ref}>
-                    <h1 className={cx('last-body')}>{inView}</h1> {console.log(inView)}
+                    <h1 className={cx('last-body')}>{inView}</h1>
                     <div>
                         <h2 className={cx('load-body')}>
                             {conInviewLast === true && <FontAwesomeIcon icon={faSpinner} />}
                         </h2>
                     </div>
                 </div>
-                <div></div>
             </div>
-        </>
+        </div>
     );
 }
 

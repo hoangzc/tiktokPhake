@@ -82,17 +82,17 @@ function VideoProfile({ data }) {
         }
     };
 
-    // useEffect(() => {
-    //     const listComent = data.id;
-    //     zoomVideoService
-    //         .getSuggested({ id: listComent, token: NIT_FOLLOW })
-    //         .then((data) => {
-    //             setCommentVideo(data);
-    //         })
-    //         .catch((error) => {
-    //             console.log(error);
-    //         });
-    // }, [reloadComent]);
+    useEffect(() => {
+        const listComent = data.id;
+        zoomVideoService
+            .getSuggested({ id: listComent, token: NIT_FOLLOW })
+            .then((data) => {
+                setCommentVideo(data);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }, [reloadComent]);
 
     const handleListCommnet = () => {
         const listComent = data.id;
@@ -109,7 +109,6 @@ function VideoProfile({ data }) {
         setTheme(true);
         setReloadComent(true);
     };
-    // cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 
     const handleCloseComent = () => {
         setCommentCheck(false);
