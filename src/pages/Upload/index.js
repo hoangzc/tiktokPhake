@@ -10,17 +10,20 @@ function Upload() {
     const namevideo = useRef();
     const [file, setFile] = useState('');
     const [names, setName] = useState('');
+    const [pathValue, setPathValue] = useState('');
     const [files, setfiles] = useState('');
     const [checkfile, setCheckfile] = useState(false);
-    console.log(names);
     const handUploadVideo = (e) => {
         const filel = e.target.files[0];
-        setFile(filel);
+        const values = e.target.value;
+
         setName(filel.name);
         const handfile = URL.createObjectURL(filel);
         if (checkfile === false) {
+            setFile(filel);
             setCheckfile(true);
             setfiles(handfile);
+            setPathValue(values);
         } else {
             setCheckfile(false);
         }
@@ -33,6 +36,31 @@ function Upload() {
 
     const handleVideoName = (e) => {
         e.current.focus();
+    };
+
+    const handUploadVideoPost = (event) => {
+        event.preventDefault();
+        const formData = new FormData();
+        formData.append('description', names);
+        formData.append('upload_file', file);
+        formData.append('thumbnail_time', '10');
+        formData.append('music', 'Hi');
+        formData.append('viewable', 'public');
+        formData.append('allows[]', 'comment');
+        const api = `https://tiktok.fullstack.edu.vn/api/videos`;
+
+        fetch(api, {
+            method: 'POST',
+            headers: {
+                Authorization:
+                    'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC90aWt0b2suZnVsbHN0YWNrLmVkdS52blwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY3MzQyNTk0NiwiZXhwIjoxNjc2MDE3OTQ2LCJuYmYiOjE2NzM0MjU5NDYsImp0aSI6IldnY2xIb3Z4djU5MXZvcFQiLCJzdWIiOjQ3NjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.spXauLlvHbmZKRl77yCXBl2s6uFea89OJPzIotPEkf8',
+                Accept: 'application/json',
+            },
+
+            body: formData,
+        })
+            .then((data) => console.log(data))
+            .catch((error) => console.log(error));
     };
 
     return (
@@ -183,8 +211,12 @@ function Upload() {
                         </div>
 
                         <div style={{ marginLeft: '-70px', marginTop: '-20px' }}>
-                            <button className={cx('button-up')}>Hủy Bỏ</button>
-                            <button className={cx('button-up')}>Đăng</button>
+                            <button className={cx('button-up')} style={{ backgroundColor: '#fafafa' }}>
+                                Hủy Bỏ
+                            </button>
+                            <button className={cx('button-up')} onClick={handUploadVideoPost}>
+                                Đăng
+                            </button>
                         </div>
                     </div>
                 </div>
